@@ -34,6 +34,7 @@ The system consists of three main components:
 ---
 
 ## 🗂️ Dataset Sources
+Pre-processed datasets are available in [here](https://huggingface.co/datasets/zbyzby/TaipeiTrees/tree/main).
 
 | Source | Description |
 |--------|-------------|
