@@ -40,7 +40,7 @@ Pre-processed datasets are available in [here](https://huggingface.co/datasets/z
 |--------|-------------|
 | [Taipei City Government Open Data](https://data.gov.tw/) | Tree location + species |
 | [Google Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview?hl=en) | Satellite RGB imagery |
-| [NEON Tree Crown Dataset](https://zenodo.org/record/6598391) | Pretraining on tree detection |
+| [NEON Tree Crown Dataset](https://zenodo.org/records/3765872) | Pretraining on tree detection |
 | [IDTReeS](https://zenodo.org/records/3934932) | Pretraining on tree classification & detection |
 | [PureForest](https://huggingface.co/datasets/IGNF/PureForest) | Pretraining on tree classification |
 ---
