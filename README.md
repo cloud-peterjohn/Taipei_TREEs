@@ -1,5 +1,5 @@
 # 🌳 Street Tree Detection and Species Classification in Taipei City
-![icon](icon.png)
+<img src="icon.png" alt="icon" width="120"/>
 
 This project focuses on detecting individual street trees and identifying their species in Taipei City using high-resolution satellite imagery and deep learning.
 
