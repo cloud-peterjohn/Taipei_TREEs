@@ -1,0 +1,45 @@
+# 🌳 Street Tree Detection and Species Classification in Taipei City
+![icon](icon.png)
+
+This project focuses on detecting individual street trees and identifying their species in Taipei City using high-resolution satellite imagery and deep learning.
+
+---
+
+## 📌 Project Objective
+
+- Automatically locate individual **street trees** from RGB satellite images.
+- **Classify the tree species** of each detected tree.
+- Focused on **urban settings**, where trees are often occluded or surrounded by buildings.
+
+---
+
+## 🧠 Methodology
+
+The system consists of three main components:
+
+1. **Tree Localization**  
+   - Model: `HR-SFANet`  
+   - Input: RGB satellite images  
+   - Output: Tree center coordinates
+
+2. **Background Removal**  
+   - Model: `U²-Net`  
+   - Purpose: Remove urban background, isolate tree crown image for classification
+
+3. **Species Classification**  
+   - Model: `ResNet` (or CNN variant)  
+   - Input: Cropped tree crown image  
+   - Output: Predicted species
+
+---
+
+## 🗂️ Dataset Sources
+
+| Source | Description |
+|--------|-------------|
+| [Taipei City Government Open Data](https://data.gov.tw/) | Tree location + species |
+| [Google Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview?hl=en) | Satellite RGB imagery |
+| [NEON Tree Crown Dataset](https://zenodo.org/record/6598391) | Pretraining on tree detection |
+| [IDTReeS](https://zenodo.org/records/3934932) | Pretraining on tree classification & detection |
+| [PureForest](https://huggingface.co/datasets/IGNF/PureForest) | Pretraining on tree classification |
+---
