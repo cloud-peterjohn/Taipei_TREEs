@@ -13,7 +13,7 @@ def main(
 ):
 
     # Load a pre-trained YOLO model
-    model = YOLO("yolo11s.pt")  # n, s, m, l, x versions available
+    model = YOLO("yolo11x.pt")  # n, s, m, l, x versions available
 
     # Train the model on our custom dataset
     model.train(

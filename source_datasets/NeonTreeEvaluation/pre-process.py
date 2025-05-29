@@ -1,4 +1,4 @@
-# Original Data Files are downloaded from: https://zenodo.org/records/5914554#.YfRhcPXMKHE
+# Original Data Files are downloaded from: https://lila.science/datasets/forest-damages-larch-casebearer/
 # Ben Weinstein, Sergio Marconi, & Ethan White. (2022). Data for the NeonTreeEvaluation Benchmark (0.2.2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5914554
 
 import os
