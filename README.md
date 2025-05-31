@@ -1,4 +1,4 @@
-# 🌳 Street Tree Detection and Species Classification in Taipei City
+# 🌳 Street Tree Detection and Counting in Taipei City
 <img src="readme_figures/icon.ico" alt="icon" width="120"/>
 
 This project focuses on detecting individual street trees in Taipei City using high-resolution satellite imagery and deep learning.
@@ -8,8 +8,9 @@ This project focuses on detecting individual street trees in Taipei City using h
 ## 📌 Project Objective
 
 - Automatically locate individual **street trees** from RGB satellite images.
+- Automatically count the number of **street trees** from RGB satellite images.
 - Focused on **urban settings**, where trees are often occluded or surrounded by buildings.
-
+- Especially designed for **Taipei City**, Taiwan.
 ---
 
 ## 🧠 Methodology
