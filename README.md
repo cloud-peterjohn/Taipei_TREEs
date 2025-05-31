@@ -1,36 +1,24 @@
 # 🌳 Street Tree Detection and Species Classification in Taipei City
-<img src="icon.ico" alt="icon" width="120"/>
+<img src="readme_figures/icon.ico" alt="icon" width="120"/>
 
-This project focuses on detecting individual street trees and identifying their species in Taipei City using high-resolution satellite imagery and deep learning.
+This project focuses on detecting individual street trees in Taipei City using high-resolution satellite imagery and deep learning.
 
 ---
 
 ## 📌 Project Objective
 
 - Automatically locate individual **street trees** from RGB satellite images.
-- **Classify the tree species** of each detected tree.
 - Focused on **urban settings**, where trees are often occluded or surrounded by buildings.
 
 ---
 
 ## 🧠 Methodology
 
-The system consists of three main components:
+Main Model:
+**YOLO 11** ![alt text](readme_figures/yolo.png)
 
-1. **Tree Localization**  
-   - Model: `HR-SFANet`  
-   - Input: RGB satellite images  
-   - Output: Tree center coordinates
-
-2. **Background Removal**  
-   - Model: `U²-Net`  
-   - Purpose: Remove urban background, isolate tree crown image for classification
-
-3. **Species Classification**  
-   - Model: `ResNet` (or CNN variant)  
-   - Input: Cropped tree crown image  
-   - Output: Predicted species
-
+Technical Details:
+![alt text](readme_figures/challenge.png)
 ---
 
 ## 🗂️ Dataset Sources
@@ -38,9 +26,12 @@ Pre-processed datasets are available in [here](https://huggingface.co/datasets/z
 
 | Source | Description |
 |--------|-------------|
-| [Taipei City Government Open Data](https://data.gov.tw/) | Tree location + species |
-| [Google Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview?hl=en) | Satellite RGB imagery |
+| [Taipei City Government Open Data](https://data.gov.tw/) | Tree location in Taipei for finetuning |
+| [Google Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview?hl=en) | Satellite RGB imagery in Taipei for finetuning |
 | [Forest Damages – Larch Casebearer](https://lila.science/datasets/forest-damages-larch-casebearer/) | Pretraining on tree detection |
-| [IDTReeS](https://zenodo.org/records/3934932) | Pretraining on tree classification & detection |
-| [PureForest](https://huggingface.co/datasets/IGNF/PureForest) | Pretraining on tree classification |
+| [IDTReeS](https://zenodo.org/records/3934932) | Pretraining on tree detection |
+
 ---
+## 📦 Result
+![result_visual](readme_figures/result_visual1.png)
+![result_visual](readme_figures/result_visual2.png)

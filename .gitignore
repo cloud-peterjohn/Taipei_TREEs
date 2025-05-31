@@ -29,7 +29,6 @@ __pycache__/
 *.rar
 *.tif
 *.tiff
-*.png
 *.jpg
 
 yolo_dataset_adaption/images/
