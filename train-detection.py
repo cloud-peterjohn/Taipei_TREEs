@@ -5,7 +5,7 @@ from ultralytics import YOLO
 
 def main(
     dataset_yaml_path="./yolo_dataset/dataset.yaml",
-    epochs=50,
+    epochs=100,
     image_size=640,
     batch_size=2,
     num_workers=4,

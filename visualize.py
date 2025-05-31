@@ -3,23 +3,31 @@ import os
 import random
 import cv2
 import matplotlib.pyplot as plt
+import torch
 
-model_ckpt_path = "runs/detect/train/weights/best.pt"
+model_ckpt_path = "/kaggle/input/tree-ckpt-ep50/last.pt"
 model = YOLO(model_ckpt_path)
 
 images_dir = "/kaggle/input/tree-yolo/yolo_dataset/images"
 img_files = [
     f for f in os.listdir(images_dir) if f.lower().endswith((".jpg", ".jpeg", ".png"))
 ]
-selected_imgs = random.sample(img_files, 18)
+img_name = random.choice(img_files)
 
-plt.figure(figsize=(18, 9))
-for idx, img_name in enumerate(selected_imgs):
+output_dir = "output_images"
+os.makedirs(output_dir, exist_ok=True)
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print(f"Using device: {device}")
+model.to(device)
+model.eval()
+
+with torch.no_grad():
     img_path = os.path.join(images_dir, img_name)
     img = cv2.imread(img_path)
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-    results = model(img_rgb)
+    results = model.predict(img_rgb, conf=0.2, iou=0.5, device=device)
     boxes = results[0].boxes.xyxy.cpu().numpy()
     confs = results[0].boxes.conf.cpu().numpy()
     clss = results[0].boxes.cls.cpu().numpy()
@@ -27,15 +35,22 @@ for idx, img_name in enumerate(selected_imgs):
     for box, conf, cls in zip(boxes, confs, clss):
         x1, y1, x2, y2 = map(int, box)
         cv2.rectangle(img_rgb, (x1, y1), (x2, y2), (255, 0, 0), 2)
-        label = f"{int(cls)}:{conf:.2f}"
+        label = f"{int(cls)}"  # 只显示类别，不显示置信度
         cv2.putText(
-            img_rgb, label, (x1, y1 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 0), 2
+            img_rgb,
+            label,
+            (x1, y1 - 5),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.6,
+            (255, 0, 0),
+            2,
         )
 
-    plt.subplot(3, 6, idx + 1)
+    save_path = os.path.join(output_dir, f"result_{img_name}.png")
+    plt.figure(figsize=(6, 6))
     plt.imshow(img_rgb)
     plt.axis("off")
     plt.title(img_name)
-
-plt.tight_layout()
-plt.savefig("visualization.svg", format="svg")
+    plt.tight_layout()
+    plt.savefig(save_path, bbox_inches="tight", pad_inches=0.1)
+    plt.show()

@@ -1,0 +1,10 @@
+# YOLO dataset configuration file
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: /kaggle/input/tree-yolo/yolo_dataset/ # dataset root dir 
+train: train.txt  # train images
+val: val.txt    # val images
+
+# Classes
+names:
+  0: Tree
