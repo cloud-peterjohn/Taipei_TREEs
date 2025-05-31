@@ -37,3 +37,6 @@ yolo_dataset_adaption/labels/
 
 source_datasets_finetuning/images/
 source_datasets_finetuning/labels/
+
+yolo_dataset_finetune/images/
+yolo_dataset_finetune/labels/
