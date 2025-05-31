@@ -34,5 +34,8 @@ Pre-processed datasets are available in [here](https://huggingface.co/datasets/z
 
 ---
 ## 📦 Result
+Example 1:
 ![result_visual](readme_figures/result_visual1.png)
+
+Example 2:
 ![result_visual](readme_figures/result_visual2.png)
