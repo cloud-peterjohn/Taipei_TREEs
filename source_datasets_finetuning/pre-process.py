@@ -343,5 +343,5 @@ def split_train_val():
 
 if __name__ == "__main__":
     calculate_bounding_boxes()
-    split_patches()
-    split_train_val()
+    # split_patches()
+    # split_train_val()
