@@ -86,6 +86,24 @@ def create_yolo_label(pixel_x, pixel_y, bbox_size=22, image_size=1920):
     )
 
 
+def visualize_bboxes(img, initial_bboxes, filtered_bboxes, image_name, bbox_size=22):
+    vis_img = img.copy()
+    for pixel_x, pixel_y in filtered_bboxes:
+        x1 = int(pixel_x - bbox_size // 2)
+        y1 = int(pixel_y - bbox_size // 2)
+        x2 = int(pixel_x + bbox_size // 2)
+        y2 = int(pixel_y + bbox_size // 2)
+        cv2.rectangle(vis_img, (x1, y1), (x2, y2), (0, 255, 0), 2)  # 绿色
+        cv2.circle(vis_img, (int(pixel_x), int(pixel_y)), 3, (0, 255, 0), -1)
+    scale = 0.3
+    vis_resized = cv2.resize(vis_img, None, fx=scale, fy=scale)
+    plt.figure(figsize=(12, 8))
+    plt.imshow(cv2.cvtColor(vis_resized, cv2.COLOR_BGR2RGB))
+    plt.title(f"Tree Detection: {image_name}")
+    plt.axis("off")
+    plt.show()
+
+
 def process_image(image_path, tree_data, output_labels_dir):
     image_name = os.path.basename(image_path)
     print(f"Processing: {image_name}")
@@ -126,6 +144,10 @@ def process_image(image_path, tree_data, output_labels_dir):
     for pixel_x, pixel_y in filtered_bboxes:
         yolo_label = create_yolo_label(pixel_x, pixel_y)
         yolo_labels.append(yolo_label)
+
+    # # Visualize the bounding boxes
+    # if len(filtered_bboxes) > 0:
+    #     visualize_bboxes(img, initial_bboxes, filtered_bboxes, image_name)
 
     label_name = os.path.splitext(image_name)[0] + ".txt"
     label_path = os.path.join(output_labels_dir, label_name)
@@ -314,10 +336,11 @@ def split_patches():
     print(f"Discarded due to excessive green: {discarded_green}")
     print(f"Valid patch ratio: {valid_patches / total_patches:.2%}")
 
+
 def split_train_val():
     dataset_dir = "./yolo_dataset_finetune/"
     images_dir = os.path.join(dataset_dir, "images")
-    image_files = [f for f in os.listdir(images_dir) if f.endswith('.jpg')]
+    image_files = [f for f in os.listdir(images_dir) if f.endswith(".jpg")]
     print(f"Found {len(image_files)} images for train/val split")
     if len(image_files) == 0:
         print("No images found for splitting!")
@@ -330,16 +353,19 @@ def split_train_val():
     print(f"Train set: {len(train_files)} images")
     print(f"Val set: {len(val_files)} images")
     train_txt_path = os.path.join(dataset_dir, "train.txt")
-    with open(train_txt_path, 'w') as f:
+    with open(train_txt_path, "w") as f:
         for img_file in train_files:
             f.write(f"./images/{img_file}\n")
     val_txt_path = os.path.join(dataset_dir, "val.txt")
-    with open(val_txt_path, 'w') as f:
+    with open(val_txt_path, "w") as f:
         for img_file in val_files:
             f.write(f"./images/{img_file}\n")
     print(f"Created train.txt with {len(train_files)} entries")
     print(f"Created val.txt with {len(val_files)} entries")
-    print(f"Train/Val split ratio: {len(train_files)/len(image_files):.1%}/{len(val_files)/len(image_files):.1%}")
+    print(
+        f"Train/Val split ratio: {len(train_files)/len(image_files):.1%}/{len(val_files)/len(image_files):.1%}"
+    )
+
 
 if __name__ == "__main__":
     calculate_bounding_boxes()
