@@ -3,7 +3,7 @@
 
 This project focuses on detecting individual street trees in Taipei City using high-resolution satellite imagery and deep learning.
 
-You can view our slides [here]().
+You can view our slides [here](https://github.com/cloud-peterjohn/Taipei_Trees/blob/main/Report.pptx).
 
 ---
 
@@ -43,6 +43,6 @@ Example 2:
 ![result_visual](readme_figures/result_visual2.png)
 
 ## 🛠️ Web Application
-The web application code is available in [here](). 
-We also record a demo video of the web application [here]().
+The web application code is available in [here](https://github.com/cloud-peterjohn/Taipei_Trees/tree/main/green-coverage). 
+We also record a demo video of the web application [here](https://github.com/cloud-peterjohn/Taipei_Trees/blob/main/Web_Application.mp4).
 You can run it with npm. 
