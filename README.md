@@ -21,12 +21,13 @@ You can view our slides [here](https://github.com/cloud-peterjohn/Taipei_Trees/b
 ## 🧠 Methodology
 
 Main Model:
-**YOLO 11**    
+**YOLO 11**     
 <img src="readme_figures/yolo.png" alt="yolo" width="200"/>
 
 
-Technical Details:
-![alt text](readme_figures/challenge.png)
+Technical Details:   
+<img src="readme_figures/challenge.png" alt="overview" width="550"/>
+
 ---
 
 ## 🗂️ Dataset Sources
@@ -42,10 +43,10 @@ Pre-processed datasets are available in [here](https://huggingface.co/datasets/z
 ---
 ## 📦 Result
 Example 1:
-![result_visual](readme_figures/result_visual1.png)
+<img src="readme_figures/result_visual1.png" alt="result_visual" width="250"/>
 
 Example 2:
-![result_visual](readme_figures/result_visual2.png)
+<img src="readme_figures/result_visual2.png" alt="result_visual" width="250"/>
 
 ## 🛠️ Web Application
 The web application code is available in [here](https://github.com/cloud-peterjohn/Taipei_Trees/tree/main/green-coverage). 
