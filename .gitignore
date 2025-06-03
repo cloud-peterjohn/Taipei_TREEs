@@ -30,7 +30,7 @@ __pycache__/
 *.tif
 *.tiff
 *.jpg
-*.pt
+# *.pt
 
 yolo_dataset_adaption/images/
 yolo_dataset_adaption/labels/

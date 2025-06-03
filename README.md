@@ -3,6 +3,8 @@
 
 This project focuses on detecting individual street trees in Taipei City using high-resolution satellite imagery and deep learning.
 
+You can view our slides [here]().
+
 ---
 
 ## 📌 Project Objective
@@ -39,3 +41,8 @@ Example 1:
 
 Example 2:
 ![result_visual](readme_figures/result_visual2.png)
+
+## 🛠️ Web Application
+The web application code is available in [here](). 
+We also record a demo video of the web application [here]().
+You can run it with npm. 
