@@ -1,5 +1,8 @@
 # 🌳 Street Tree Detection and Counting in Taipei City
-<img src="readme_figures/icon.ico" alt="icon" width="120"/>
+<p align="center">
+    <img src="readme_figures/icon.ico" alt="icon" width="150"/>
+</p>
+
 
 This project focuses on detecting individual street trees in Taipei City using high-resolution satellite imagery and deep learning.
 
