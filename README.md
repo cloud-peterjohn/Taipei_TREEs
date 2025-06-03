@@ -1,9 +1,11 @@
 # 🌳 Street Tree Detection and Counting in Taipei City
 
 This project focuses on detecting individual street trees in Taipei City using high-resolution satellite imagery and deep learning.
+
 <p align="center">
     <img src="readme_figures/icon.ico" alt="icon" width="150"/>
 </p>
+
 You can view our slides [here](https://github.com/cloud-peterjohn/Taipei_Trees/blob/main/Report.pptx).
 
 ---
@@ -19,7 +21,10 @@ You can view our slides [here](https://github.com/cloud-peterjohn/Taipei_Trees/b
 ## 🧠 Methodology
 
 Main Model:
-**YOLO 11** ![alt text](readme_figures/yolo.png)
+**YOLO 11** <p align="center">
+    <img src="readme_figures/yolo.png" alt="yolo" width="200"/>
+</p>
+
 
 Technical Details:
 ![alt text](readme_figures/challenge.png)
