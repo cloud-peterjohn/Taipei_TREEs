@@ -21,10 +21,8 @@ You can view our slides [here](https://github.com/cloud-peterjohn/Taipei_Trees/b
 ## 🧠 Methodology
 
 Main Model:
-**YOLO 11** <img src="readme_figures/yolo.png" alt="yolo" width="200"/>
-<p align="center">
-    <img src="readme_figures/yolo.png" alt="yolo" width="200"/>
-</p>
+**YOLO 11**    
+<img src="readme_figures/yolo.png" alt="yolo" width="200"/>
 
 
 Technical Details:
